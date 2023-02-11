@@ -1,0 +1,68 @@
+// Color
+$white: #FFFFFF;
+$white-culture: #F5F5F5;
+$orange-terra: #E2725B;
+$brown-antique: #CD9575;
+$black-raisin: #1E1E24;
+$black-background: rgba(245, 245, 245, 0);
+$blue-han: #446CCF;
+$black: #000000;
+$dark-gray: #686969;
+$basic-gray: rgba(245, 245, 245, 0.65);
+
+@mixin font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+@mixin font-inter {
+    font-family: 'Inter', sans-serif;
+}
+@mixin d-flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin p-relative-10{
+    position: relative;
+    z-index: 10;
+}
+
+@mixin padding-left-follow-container{
+    padding-left: calc( (100vw - 1320px) / 2);
+    @media screen and (max-width: 1500px){
+        padding-left: calc( (100vw - 1140px) / 2);
+    }
+    @media (max-width: 1200px){
+        padding-left: calc( (100vw - 960px) / 2);
+    }
+    @media (max-width: 992px){
+        padding-left: calc( (100vw - 720px) / 2);
+    }
+    @media (max-width: 768px){
+        padding-left: calc( (100vw - 540px) / 2);
+    }
+    @media (max-width: 595px){
+        padding-left: 15px;
+    }
+}
+@mixin padding-right-follow-container{
+    padding-right: calc( (100vw - 1320px) / 2);
+    @media (max-width: 1400px){
+        padding-right: calc( (100vw - 1140px) / 2);
+    }
+    @media (max-width: 1200px){
+        padding-right: calc( (100vw - 960px) / 2);
+    }
+    @media (max-width: 992px){
+        padding-right: calc( (100vw - 720px) / 2);
+    }
+    @media (max-width: 768px){
+        padding-right: calc( (100vw - 540px) / 2);
+    }
+    @media (max-width: 595px){
+        padding-right: 15px;
+    }
+}
+
+@mixin menu-effect-left{
+
+}
