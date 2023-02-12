@@ -316,7 +316,7 @@
         margin-top: -10vw;
         margin-bottom: 120px;
         .wrapper{
-            width: 90vw;
+            width: 1267px;
             margin: 0 auto;
             position: relative;
             background-color: $brown-antique;
@@ -525,7 +525,7 @@
                     z-index: 10;
                     background: linear-gradient(180deg, rgba(245, 245, 245, 0) 0%, #F5F5F5 100%);
 
-                    padding: 20px;
+                    padding: 40px;
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-end;
@@ -816,7 +816,11 @@
                     img{
                         width: 250px;
                         height: 250px;
-                        transition: transform 0.3s linear;
+                        transition: transform 1s linear;
+                        -webkit-transition: transform 1s linear;
+                        -moz-transition: transform 1s linear;
+                        -ms-transition: transform 1s linear;
+                        -o-transition: transform 1s linear;
                         &:hover{
                             transform: scale(1.1);
                         }
@@ -1004,7 +1008,7 @@
         }
         .button-side{
             a{
-                background-color: $orange-terra;
+                background-color: $brown-antique;
                 color: $white-culture;
                 @include font-inter();
                 width: fit-content;
@@ -1027,6 +1031,7 @@
                     font-size: 52px;
                     text-align: center;
                     margin-bottom: 30px;
+                    font-weight: bold;
                 }
                 // .line-division{
                 //     position: absolute;
@@ -1261,8 +1266,12 @@
         transform: translateX(-300px);
         opacity: 0;
         visibility: hidden;
-        transition: all 0.5s linear;
-    }
+        transition: all 1s linear;
+        -webkit-transition: all 1s linear;
+        -moz-transition: all 1s linear;
+        -ms-transition: all 1s linear;
+        -o-transition: all 1s linear;
+}
     .content-side{
         .name, .job-position, .speech{
             transform: translateX(-300px);
@@ -1270,14 +1279,26 @@
             visibility: hidden;
         }
         .name{
-            transition: all 0.5s linear .3s;
-        }
+            transition: all 1s linear .3s;
+            -webkit-transition: all 1s linear .3s;
+            -moz-transition: all 1s linear .3s;
+            -ms-transition: all 1s linear .3s;
+            -o-transition: all 1s linear .3s;
+}
         .job-position{
-            transition: all 0.5s linear .6s;
-        }
+            transition: all 1s linear .6s;
+            -webkit-transition: all 1s linear .6s;
+            -moz-transition: all 1s linear .6s;
+            -ms-transition: all 1s linear .6s;
+            -o-transition: all 1s linear .6s;
+}
         .speech{
-            transition: all 0.5s linear .9s;
-        }
+            transition: all 1s linear .9s;
+            -webkit-transition: all 1s linear .9s;
+            -moz-transition: all 1s linear .9s;
+            -ms-transition: all 1s linear .9s;
+            -o-transition: all 1s linear .9s;
+}
     }
     &.aos-animate{
         .image-side{
@@ -1299,8 +1320,12 @@
         transform: translateX(300px);
         opacity: 0;
         visibility: hidden;
-        transition: all 0.5s linear;
-    }
+        transition: all 1s linear;
+        -webkit-transition: all 1s linear;
+        -moz-transition: all 1s linear;
+        -ms-transition: all 1s linear;
+        -o-transition: all 1s linear;
+}
     .content-side{
         .name, .job-position, .speech{
             transform: translateX(300px);
@@ -1308,14 +1333,26 @@
             visibility: hidden;
         }
         .name{
-            transition: all 0.5s linear .3s;
-        }
+            transition: all 1s linear .3s;
+            -webkit-transition: all 1s linear .3s;
+            -moz-transition: all 1s linear .3s;
+            -ms-transition: all 1s linear .3s;
+            -o-transition: all 1s linear .3s;
+}
         .job-position{
-            transition: all 0.5s linear .6s;
-        }
+            transition: all 1s linear .6s;
+            -webkit-transition: all 1s linear .6s;
+            -moz-transition: all 1s linear .6s;
+            -ms-transition: all 1s linear .6s;
+            -o-transition: all 1s linear .6s;
+}
         .speech{
-            transition: all 0.5s linear .9s;
-        }
+            transition: all 1s linear .9s;
+            -webkit-transition: all 1s linear .9s;
+            -moz-transition: all 1s linear .9s;
+            -ms-transition: all 1s linear .9s;
+            -o-transition: all 1s linear .9s;
+}
     }
     &.aos-animate{
         .image-side{

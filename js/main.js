@@ -1,5 +1,7 @@
 // Animation on scroll
-AOS.init();
+AOS.init({
+  duration: 15000
+});
 
 var linkImage = {
     philippe: './images/Ansas_homepage_calendar_1.png',
@@ -40,10 +42,15 @@ var linkImage = {
             animateValue(objAmount, 0, 101, 1500);
             console.log(1)
         }
+
+        let mainStatue = jQuery('#main-statue');
+        let animateTopVal = 'inherit';
+        if(document.documentElement.scrollTop <= mainStatue.height()){
+          animateTopVal = -(document.documentElement.scrollTop / 5) + 'px';
+        }
+        mainStatue.css('top',animateTopVal);
+
     })
-    const nowDay=getCurrentDay();
-    jQuery('#current-date-showing').html(nowDay.date);
-    jQuery('#current-month-showing').html(nowDay.month);
     jQuery('.homepage__calendar .each-type').on('mouseenter',function(){
         const nameOfTypeCalendar = jQuery(this).attr('name');
 
