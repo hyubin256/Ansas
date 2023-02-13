@@ -34,12 +34,15 @@ var linkImage = {
 
 //   animateValue(obj, 0, 101, 2000);
   jQuery(window).on('load', function(){
+    var isShowMenuMobile=false;
+    var widthScreen = window.screen.width;
+
     jQuery(window).on('scroll',function(){
         const topDistanceOfAmountWorkers = document.querySelector('#amount-workers').getBoundingClientRect().y;
         const objAmount = document.getElementById("amount-workers")
-        if(topDistanceOfAmountWorkers < 200 && isShowAmountWorkder == false){
+        if(topDistanceOfAmountWorkers < 350 && isShowAmountWorkder == false){
             isShowAmountWorkder = true;
-            animateValue(objAmount, 0, 101, 1500);
+            animateValue(objAmount, 0, 101, 800);
             console.log(1)
         }
 
@@ -51,6 +54,43 @@ var linkImage = {
         mainStatue.css('top',animateTopVal);
 
     })
+    jQuery('.header-icon-action').on('click',function(){
+      if(!isShowMenuMobile){
+         jQuery(this).addClass('show-action');
+         jQuery('#page-menu--mobile').addClass('show-action')
+        }
+      else {
+        jQuery(this).removeClass('show-action');
+        jQuery('#page-menu--mobile').removeClass('show-action')
+      }
+      isShowMenuMobile = !isShowMenuMobile;
+    })
+    if(widthScreen<768){
+      jQuery('#map-expertise .point-address:nth-child(1)').css({
+        'left':`${105 * (widthScreen - 130) / 580}px`,
+        'top':`${250 * (widthScreen - 130) / 580}px`,
+      })
+      jQuery('#map-expertise .point-address:nth-child(2)').css({
+        'left':`${209 * (widthScreen - 130) / 580}px`,
+        'top':`${234 * (widthScreen - 130) / 580}px`,
+      })
+      jQuery('#map-expertise .point-address:nth-child(3)').css({
+        'left':`${262 * (widthScreen - 130) / 580}px`,
+        'top':`${304 * (widthScreen - 130) / 580}px`,
+      })
+      jQuery('#map-expertise .point-address:nth-child(4)').css({
+        'left':`${292 * (widthScreen - 130) / 580}px`,
+        'top':`${186 * (widthScreen - 130) / 580}px`,
+      })
+      jQuery('#map-expertise .point-address:nth-child(5)').css({
+        'left':`${398 * (widthScreen - 130) / 580}px`,
+        'top':`${406 * (widthScreen - 130) / 580}px`,
+      })
+      jQuery('#map-expertise .point-address:nth-child(6)').css({
+        'left':`${453 * (widthScreen - 130) / 580}px`,
+        'top':`${168 * (widthScreen - 130) / 580}px`,
+      })
+    }
     jQuery('.homepage__calendar .each-type').on('mouseenter',function(){
         const nameOfTypeCalendar = jQuery(this).attr('name');
 
@@ -64,7 +104,7 @@ var linkImage = {
           }
         })
     })
-
+    jQuery('')
     var itemsContentIntroduce = jQuery('.content-introduce-items');
     var lengthContentIntroduce = itemsContentIntroduce.length;
     var currentContentIntroduce = 0;
@@ -80,9 +120,5 @@ var linkImage = {
                 jQuery(this).addClass('active');
             }
         });
-        // currentItemIntroduce.removeClass('first');
-        // currentContentIntroduce+=1;
-        // itemsContentIntroduce[currentContentIntroduce].addClass('active');
-
     })
   })
