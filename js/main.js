@@ -36,16 +36,29 @@ var linkImage = {
   jQuery(window).on('load', function(){
     var isShowMenuMobile=false;
     var widthScreen = window.screen.width;
-
+    var headerHeightPC = jQuery('#page-header').height();
     jQuery(window).on('scroll',function(){
         const topDistanceOfAmountWorkers = document.querySelector('#amount-workers').getBoundingClientRect().y;
         const objAmount = document.getElementById("amount-workers")
+        let screenScrolled = jQuery(window).scrollTop();
+        console.log(screenScrolled)
         if(topDistanceOfAmountWorkers < 350 && isShowAmountWorkder == false){
             isShowAmountWorkder = true;
             animateValue(objAmount, 0, 101, 800);
             console.log(1)
         }
-
+        if(screenScrolled>=60 && widthScreen>=768){
+          jQuery('#page-body').css({
+            'paddingTop': `${headerHeightPC}px`,
+          })
+          jQuery('#page-header').addClass('fixed')
+        }
+        if(screenScrolled<60 && widthScreen>=768){
+          jQuery('#page-body').css({
+            'paddingTop': `${0}px`,
+          })
+          jQuery('#page-header').removeClass('fixed')
+        }
         let mainStatue = jQuery('#main-statue');
         let animateTopVal = 'inherit';
         if(document.documentElement.scrollTop <= mainStatue.height()){
@@ -61,12 +74,12 @@ var linkImage = {
         }
       else {
         jQuery(this).removeClass('show-action');
-        jQuery('#page-menu--mobile').removeClass('show-action')
+        jQuery('#page-menu--mobile').removeClass('show-action preload')
       }
       isShowMenuMobile = !isShowMenuMobile;
     })
     if(widthScreen<768){
-      jQuery('#map-expertise .point-address:nth-child(1)').css({
+      jQuery('#map-expertise .point-address').css({
         'left':`${105 * (widthScreen - 130) / 580}px`,
         'top':`${250 * (widthScreen - 130) / 580}px`,
       })
@@ -112,7 +125,7 @@ var linkImage = {
         currentContentIntroduce+=1;
         if(currentContentIntroduce>=(lengthContentIntroduce-1))currentContentIntroduce = 0;
         itemsContentIntroduce.each(function(index){
-            jQuery(this).removeClass('first-times')
+            jQuery(this).removeClass('preload')
             if(index != currentContentIntroduce){
                 jQuery(this).removeClass('active first');
             }
