@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/slick.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="blank-header"></div>
+    <div id="page-header">
+        <div class="container">
+            <div class="wrapper" style="max-width:1267px;">
+                <ul class="menu-container">
+                    <li class="menu-item">
+                        <a href="#">Accueil</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Le Cabinet</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./expertise.html">Expertise</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Résultats</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Prochaines<br>Ventes</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Actualités</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="page-header--mobile">
+        <div class="header-icon-action"></div>
+    </div>
+    <div id="page-menu--mobile">
+        <ul class="menu-container">
+            <li class="menu-item">
+                <a href="#">Accueil</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Le Cabinet</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Expertise</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Résultats</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Prochaines Ventes</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Actualités</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div id="page-body">
+        <div class="body-pattern-background" style="background-image: url('./images/Ansas_pattern_background.png')"></div>
+        <div id="page-expertise">
+            <section class="sec-top-page">
+                <img class="logo" src="./images/Ansas_sec_top_logo.png" alt="">
+                <div class="page-name-box">
+                    <div class="content-side">
+                        <h1 class="name appear-custom-animation">Expertise</h1>
+                        <h3 class="small-subscribe">Expertisez votre objet en ligne!</h3>
+                    </div>
+                </div>
+            </section>
+            <section class="expertise__estimation">
+                <div class="background-decoration"></div>
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="left">
+                            <div class="subscribe-side">
+                                <h1 class="main-title">
+                                    Estimation en ligne
+                                </h1>
+                                <h3 class="sub-title">
+                                    Faites expertiser vos objets et oeuvres d’art asiatiques
+                                    <br>Expertise gratuite et confidentielle
+                                </h3>
+                                <p class="content">
+                                    Afin de vous donner l’estimation précise de votre objet, nous vous invitons à nous transmettre les informations en votre possession (les dimensions de l’objet, son état de conservation, certificats éventuels rattachés à l’objet).
+                                    <br><br>Les valeurs indicatives et/ou les informations données par le Cabinet d’expertise en réponse aux demandes reçues par courriels, ou à la vue des photographies et/ou de documents, ou d’informations orales fournies par le demandeur, ne peuvent en aucun cas être considérées comme des expertises engageant sa responsabilité.
+                                    <br><br>Par ailleurs, il est rappelé que les valeurs indicatives et/ou les informations en valeur indicatives ne sont données qu’au demandeur et ne sauraient être communiquées à des tiers sans notre accord écrit et préalable.
+                                    <br><br>Nous attirons votre attention sur le fait que les communications par mail sont susceptibles de modifications par des tiers.
+                                </p>
+                                <div class="estimation-upload-steps step-two mobile"></div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="estimation-upload-steps step-one">
+                                <div class="step-name">
+                                    <div class="order-number">
+                                        1.
+                                    </div>
+                                    <h3 class="name">
+                                        Mes coordonnées et détails de l’objet
+                                    </h3>
+                                </div>
+                                <div class="subscribe-addition">
+                                    <div class="inner">
+                                        <ul class="subscribe-container">
+                                            <li class="subscribe-item">
+                                                <h3 class="item-title">
+                                                    Coordonnées
+                                                </h3>
+                                                <input placeholder="Nom" type="text" name="last-name" value="">
+                                                <input placeholder="Prenom" type="text" name="first-name" value="">
+                                                <input placeholder="Adresse Email" type="email" name="email-address" value="">
+                                                <input placeholder="Téléphone" type="number" name="phone-number" value="">
+                                            </li>
+                                            <li class="subscribe-item">
+                                                <h3 class="item-title">
+                                                    Détails objet 1
+                                                </h3>
+                                                <input placeholder="Description" type="text" name="description-1" value="">
+                                                <input placeholder="Hauteur (cm)" type="text" name="advance-1" value="">
+                                                <input placeholder="Larger (cm)" type="text" name="large-1" value="">
+                                            </li>
+                                        </ul>
+                                        <button class="add-button">
+                                            Ajouter un objet
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="estimation-upload-steps step-two desktop">
+                                <div class="step-name">
+                                    <div class="order-number">
+                                        2.
+                                    </div>
+                                    <h3 class="name">
+                                        Ajouter des photos
+                                    </h3>
+                                </div>
+                                <div class="image-addition">
+                                    <div class="inner">
+                                        <div class="addition-item">
+                                            <div class="image-shown">
+                                                <img src="" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="addition-item">
+                                            <div class="image-shown">
+                                                <img src="" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="addition-item">
+                                            <div class="image-shown">
+                                                <img src="" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="addition-item">
+                                            <div class="image-shown">
+                                                <img src="" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="add-button">
+                                        Ajouter des photos / certificats supplémentaires
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="estimation-upload-steps step-three">
+                                <div class="accept-privacy">
+                                    <input type="checkbox" id="privacy-upload"/>
+                                    <label for="privacy-upload">
+                                        J'ai pris connaissance que les valeurs et/ou les informations données en réponse aux demandes ne peuvent en aucun cas être considérées comme des expertises engageant la responsabilité d’Ansas & Papillon. Ces valeurs indicatives et/ou les informations ne sont données qu'au demandeur et ne sauraient être communiquées à des tiers sans notre accord écrit et préalable.
+                                    </label>
+                                </div>
+                                <div class="step-name">
+                                    <div class="order-number">
+                                        3.
+                                    </div>
+                                    <h3 class="name">
+                                        J’envoie ma demande d’estimation
+                                    </h3>
+                                </div>
+                                <div class="button-side">
+                                    <button class="general-button blue">
+                                        J’envoie<br>mon objet
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="sec-our-services">
+                <div class="container service-container">
+                    <div class="title-side">
+                        <h1>Nos Services</h1>
+                        <div class="line-trim"></div>
+                    </div>
+                    <div class="introduce-side">
+                        <div class="item">
+                            <img class="head-image" src="./images/Ansas_homepage_service_1.png" alt="">
+                            <h3 class="job-position" data-aos="fade-up" data-aos-duration="700">Expertise</h3>
+                            <p class="content" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+                                Nous vous proposons l'expertise de vos objets d'arts asiatiques en ligne ou dans nos bureaux, afin de vous renseigner sur leurs provenances leurs époques et leurs valeurs.
+                            </p>
+                        </div>
+                        <div class="item">
+                            <img class="head-image" src="./images/Ansas_homepage_service_2.png" alt="">
+                            <h3 class="job-position" data-aos="fade-up" data-aos-duration="700">Estimation</h3>
+                            <p class="content" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+                                Nos estimations sont réalisées au regard du marché de l'art français et international. Précises et documentées, elles peuvent être réalisées aussi bien dans le cadre d’un partage à la suite d’une succession qu'en valeur d'assurance ou en vue d'une vente aux enchères.
+                            </p>
+                        </div>
+                        <div class="item">
+                            <img class="head-image" src="./images/Ansas_homepage_service_3.png" alt="">
+                            <h3 class="job-position" data-aos="fade-up" data-aos-duration="700">Conseils</h3>
+                            <p class="content" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+                                Forts de notre réseau de commissaires-priseurs répartit sur toute la France et de notre expérience, le cabinet d'expertises est en mesure de vous apporter les conseils adaptés à la valorisation de vos biens.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="button-side">
+                        <a href="#" class="general-button orange">
+                            En savoir plus
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="sec-latest-news">
+                <div class="container">
+                    <h1 class="head-title">Nos dernières<br>actualités
+                    </h1>
+                    <div class="news-container">
+                        <div class="news-item">
+                            <img class="head-image" src="./images/Ansas_latest_new_1.png" alt="">
+                            <h5 class="name">The Morning Calm</h5>
+                            <div class="line-decoration"></div>
+                            <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                            <a class="link-button" href="#">
+                                <span>LIRE PLUS</span>
+                                <img src="./images/Ansas_arrow_left_icon.png" alt="">
+                            </a>
+                        </div>
+                        <div class="news-item">
+                            <img class="head-image" src="./images/Ansas_latest_new_2.png" alt="">
+                            <h5 class="name">Diggin for Greatness</h5>
+                            <div class="line-decoration"></div>
+                            <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                            <a class="link-button" href="#">
+                                <span>LIRE PLUS</span>
+                                <img src="./images/Ansas_arrow_left_icon.png" alt="">
+                            </a>
+                        </div>
+                        <div class="news-item">
+                            <img class="head-image" src="./images/Ansas_latest_new_3.png" alt="">
+                            <h5 class="name">Adventure awaits!</h5>
+                            <div class="line-decoration"></div>
+                            <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                            <a class="link-button" href="#">
+                                <span>LIRE PLUS</span>
+                                <img src="./images/Ansas_arrow_left_icon.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div id="page-footer">
+        <div class="container">
+            <div class="footer-wrapper">
+                <div class="head-logo">
+                    <img src="./images/Ansas_footer_logo.png" alt="">
+                </div>
+                <nav class="english-menu">
+                    <ul class="menu-container">
+                        <li class="menu-item">
+                            <a href="#">Homepage</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Le Cabinet</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Expertise</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Résultats</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Prochaines<br>Ventes</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="social-side">
+                    <a href="#" class="social-item">
+                        <img src="./images/Ansas_footer_fb_icon.png" alt="">
+                    </a>
+                    <a href="#" class="social-item">
+                        <img src="./images/Ansas_footer_instagram_icon.png" alt="">
+                    </a>
+                    <a href="#" class="social-item">
+                        <img src="./images/Ansas_footer_twitter_icon.png" alt="">
+                    </a>
+                </div>
+                <p class="copyright">© 2022 Ansas Papillon & de Léry</p>
+                <a href="#" class="other-link">Nos mentions légales</a>
+                <p class="developed">Mise en ligne par <span class="text-decoration-underline">AJILL</span> & <span class="text-decoration-underline">Milsabor</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

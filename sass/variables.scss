@@ -3,12 +3,14 @@ $white: #FFFFFF;
 $white-culture: #F5F5F5;
 $orange-terra: #E2725B;
 $brown-antique: #CD9575;
+$pink-blur: #C5977A;
 $black-raisin: #1E1E24;
 $black-background: rgba(245, 245, 245, 0);
 $blue-han: #446CCF;
 $black: #000000;
 $dark-gray: #686969;
 $basic-gray: rgba(245, 245, 245, 0.65);
+$input-gray: rgba(30, 30, 35, 0.35);
 
 @mixin font-playfair {
     font-family: 'Playfair Display', serif;
