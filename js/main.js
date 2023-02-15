@@ -38,18 +38,21 @@ var linkImage = {
     var isShowMenuMobile=false;
     var widthScreen = window.screen.width;
     var headerHeightPC = jQuery('#page-header').height();
+    let topDistanceOfAmountWorkers = 0
     jQuery(window).on('scroll',function(){
       try{
-        const topDistanceOfAmountWorkers = jQuery('#amount-workers').getBoundingClientRect().y || null;
-        if(topDistanceOfAmountWorkers < 350 && isShowAmountWorkder == false){
-          isShowAmountWorkder = true;
-          animateValue(objAmount, 0, 101, 800);
-          console.log(1)
-        }
-      }catch{}
-      const objAmount = document.getElementById("amount-workers")
+        topDistanceOfAmountWorkers = jQuery('#amount-workers').getBoundingClientRect().y || null;
+      }catch{
+
+      }
+      const objAmount = document.getElementById("amount-workers");
+      if(topDistanceOfAmountWorkers < 400 && isShowAmountWorkder == false){
+        isShowAmountWorkder = true;
+        animateValue(objAmount, 0, 101, 500);
+        console.log(1)
+      }
       let screenScrolled = jQuery(window).scrollTop();
-      console.log(screenScrolled);
+      // console.log(screenScrolled);
       if(screenScrolled>=60 && widthScreen>=768){
         jQuery('#page-body').css({
           'paddingTop': `${headerHeightPC}px`,
@@ -84,7 +87,6 @@ var linkImage = {
 
     if(widthScreen >=768){
       let contentStepTwo = jQuery('.estimation-upload-steps.step-two.desktop').html();
-      console.log(contentStepTwo)
       jQuery('.estimation-upload-steps.step-two.mobile').append(contentStepTwo);
     }
     if(widthScreen<768){
@@ -138,7 +140,6 @@ var linkImage = {
         if(i==0) newContentSplit += "<span data-aos='fade-up' data-aos-duration='100'>"+e+"</span>";
         else newContentSplit += `<span data-aos='fade-up' data-aos-duration='1000' data-aos-delay='${i*100+150}'>`+e+'</span>';
       });
-      console.log(newContentSplit)
       jQuery(this).prepend(newContentSplit);
     });
     var itemsContentIntroduce = jQuery('.content-introduce-items');
