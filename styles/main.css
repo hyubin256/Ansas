@@ -832,8 +832,8 @@ button {
         position: absolute;
         content: '';
         z-index: 10;
-        left: 105px;
-        top: 250px; }
+        left: calc( 105 * 100% / 580);
+        top: calc( 240 * 100% / 580); }
         .homepage__domain-expertise .wrapper #map-expertise .point-address:hover {
           animation: bounce-10 1s linear; }
         .homepage__domain-expertise .wrapper #map-expertise .point-address img {
@@ -845,20 +845,20 @@ button {
               height: 38px;
               object-fit: cover; } }
         .homepage__domain-expertise .wrapper #map-expertise .point-address:nth-child(2) {
-          left: 209px;
-          top: 234px; }
+          left: calc( 209 * 100% / 580);
+          top: calc( 234 * 100% / 580); }
         .homepage__domain-expertise .wrapper #map-expertise .point-address:nth-child(3) {
-          left: 262px;
-          top: 304px; }
+          left: calc( 262 * 100% / 580);
+          top: calc( 304 * 100% / 580); }
         .homepage__domain-expertise .wrapper #map-expertise .point-address:nth-child(4) {
-          left: 292px;
-          top: 186px; }
+          left: calc( 292 * 100% / 580);
+          top: calc( 186 * 100% / 580); }
         .homepage__domain-expertise .wrapper #map-expertise .point-address:nth-child(5) {
-          left: 398px;
-          top: 406px; }
+          left: calc( 398 * 100% / 580);
+          top: calc( 406 * 100% / 580); }
         .homepage__domain-expertise .wrapper #map-expertise .point-address:nth-child(6) {
-          left: 453px;
-          top: 168px; }
+          left: calc( 453 * 100% / 580);
+          top: calc( 168 * 100% / 580); }
     .homepage__domain-expertise .wrapper .content-side {
       display: flex;
       flex-direction: column;

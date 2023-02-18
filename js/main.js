@@ -49,7 +49,7 @@ var linkImage = {
       if(topDistanceOfAmountWorkers < 400 && isShowAmountWorkder == false){
         isShowAmountWorkder = true;
         animateValue(objAmount, 0, 101, 500);
-        console.log(1)
+
       }
       let screenScrolled = jQuery(window).scrollTop();
       // console.log(screenScrolled);
@@ -90,33 +90,6 @@ var linkImage = {
       jQuery('.estimation-upload-steps.step-two.mobile').append(contentStepTwo);
     }
     if(widthScreen<768){
-      jQuery('#map-expertise .point-address').css({
-        'left':`${105 * (widthScreen - 130) / 580}px`,
-        'top':`${250 * (widthScreen - 130) / 580}px`,
-      })
-
-      jQuery('#map-expertise .point-address:nth-child(2)').css({
-        'left':`${209 * (widthScreen - 130) / 580}px`,
-        'top':`${234 * (widthScreen - 130) / 580}px`,
-      })
-
-      jQuery('#map-expertise .point-address:nth-child(3)').css({
-        'left':`${262 * (widthScreen - 130) / 580}px`,
-        'top':`${304 * (widthScreen - 130) / 580}px`,
-      })
-
-      jQuery('#map-expertise .point-address:nth-child(4)').css({
-        'left':`${292 * (widthScreen - 130) / 580}px`,
-        'top':`${186 * (widthScreen - 130) / 580}px`,
-      })
-      jQuery('#map-expertise .point-address:nth-child(5)').css({
-        'left':`${398 * (widthScreen - 130) / 580}px`,
-        'top':`${406 * (widthScreen - 130) / 580}px`,
-      })
-      jQuery('#map-expertise .point-address:nth-child(6)').css({
-        'left':`${453 * (widthScreen - 130) / 580}px`,
-        'top':`${168 * (widthScreen - 130) / 580}px`,
-      })
     }
 
     jQuery('.homepage__calendar .each-type').on('mouseenter',function(){

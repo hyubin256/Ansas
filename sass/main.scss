@@ -954,20 +954,14 @@
                     position: absolute;
                     content: '';
                     z-index: 10;
-                    left: 105px;
-
-                    top: 250px;
-                    // @media (max-width: 768px) {
-                    //     left: calc( 105px * 580 / (100vw - 130px));
-                    //     top: calc( 250px * 580 / (100vw - 130px))
-                    // }
+                    left: calc( 105 * 100% / 580);
+                    top: calc( 240 * 100% / 580);
                     &:hover{
                         animation: bounce-10 1s linear;
                     }
                     img{
                         width: 43px;
                         height: 54px;
-
                         @media (max-width: 768px) {
                             width: 30px;
                             height: 38px;
@@ -975,44 +969,24 @@
                         }
                     }
                     &:nth-child(2){
-                        left: 209px;
-                        top: 234px;
-                        // @media (max-width: 768px) {
-                        //     left: calc( 209px * (100vw - 130px) / 580);
-                        //     top: calc( 234px * 580 / (100vw - 130px));
-                        // }
+                        left: calc( 209 * 100% / 580);
+                        top: calc( 234 * 100% / 580);
                     }
                     &:nth-child(3){
-                        left: 262px;
-                        top: 304px;
-                        // @media (max-width: 768px) {
-                        //     left: calc( 262px * 580px / (100vw - 130px));
-                        //     top: calc( 304px * 580px / (100vw - 130px));
-                        // }
+                        left: calc( 262 * 100% / 580);
+                        top: calc( 304 * 100% / 580);
                     }
                     &:nth-child(4){
-                        left: 292px;
-                        top: 186px;
-                        // @media (max-width: 768px) {
-                        //     left: calc( 292px * 580px / (100vw - 130px));
-                        //     top: calc( 186px * 580px / (100vw - 130px));
-                        // }
+                        left: calc( 292 * 100% / 580);
+                        top: calc( 186 * 100% / 580);
                     }
                     &:nth-child(5){
-                        left: 398px;
-                        top: 406px;
-                        // @media (max-width: 768px) {
-                        //     left: calc( 398px * 580px / (100vw - 130px));
-                        //     top: calc( 406px * 580px / (100vw - 130px));
-                        // }
+                        left: calc( 398 * 100% / 580);
+                        top: calc( 406 * 100% / 580);
                     }
                     &:nth-child(6){
-                        left: 453px;
-                        top: 168px;
-                        // @media (max-width: 768px) {
-                        //     left: calc( 453px * 580px / (100vw - 130px));
-                        //     top: calc( 168px * 580px / (100vw - 130px));
-                        // }
+                        left: calc( 453 * 100% / 580);
+                        top: calc( 168 * 100% / 580);
                     }
                 }
             }
