@@ -1093,6 +1093,13 @@
                 position: relative;
                 display: flex;
                 margin-bottom: 80px;
+                &:hover{
+                    .image-side{
+                        img{
+                            transform: scale(1.1);
+                        }
+                    }
+                }
                 @media (max-width: 768px) {
                     margin-bottom: 50px;
                 }
@@ -1130,7 +1137,6 @@
                         }
                         .name{
                             position: relative;
-                            right: -40px;
                             left: unset;
                             width: calc( 100% + 40px );
                             @media (max-width: 768px) {
@@ -1163,14 +1169,11 @@
                         -moz-transition: transform 1s linear;
                         -ms-transition: transform 1s linear;
                         -o-transition: transform 1s linear;
-                        &:hover{
-                            transform: scale(1.1);
-                        }
                     }
                 }
                 .content-side{
                     position: relative;
-                    top: 200px;
+                    top: 50px;
                     @media (max-width: 595px) {
                         top: 0;
                         text-align: center;
@@ -1182,7 +1185,7 @@
                         font-weight: 400;
 
                         position: relative;
-                        left: -60px;
+                        left: -40px;
                         right: unset;
                         width: 110%;
                         @media (max-width: 595px) {
