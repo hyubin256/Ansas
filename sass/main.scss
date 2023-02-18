@@ -768,6 +768,15 @@
 
             position: relative;
             margin-bottom: 20px;
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr 1fr;
+                row-gap: 30px;
+                column-gap: 30px;
+            }
+            @media (max-width: 595px) {
+                grid-template-columns: 1fr;
+                row-gap: 40px;
+            }
             .specific-item{
                 position: relative;
                 &:hover{
@@ -846,6 +855,9 @@
                 transform:  translateY(-50%);
 
                 background: linear-gradient(90deg, #C5977A 0%, rgba(197, 151, 122, 0) 100%);
+                @media (max-width: 768px) {
+                    display: none;
+                }
             }
             &::after{
                 position: absolute;
@@ -859,6 +871,9 @@
                 transform:  translateY(-50%);
 
                 background:  linear-gradient(270deg, #1E1E23 0%, rgba(30, 30, 35, 0) 100%);;
+                @media (max-width: 768px) {
+                    display: none;
+                }
             }
         }
     }

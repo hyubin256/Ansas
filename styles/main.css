@@ -667,6 +667,15 @@ button {
     row-gap: 60px;
     position: relative;
     margin-bottom: 20px; }
+    @media (max-width: 768px) {
+      .homepage__specific .specific-container {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+        column-gap: 30px; } }
+    @media (max-width: 595px) {
+      .homepage__specific .specific-container {
+        grid-template-columns: 1fr;
+        row-gap: 40px; } }
     .homepage__specific .specific-container .specific-item {
       position: relative; }
       .homepage__specific .specific-container .specific-item:hover .content-side {
@@ -726,6 +735,9 @@ button {
       width: 40%;
       transform: translateY(-50%);
       background: linear-gradient(90deg, #C5977A 0%, rgba(197, 151, 122, 0) 100%); }
+      @media (max-width: 768px) {
+        .homepage__specific .specific-container::before {
+          display: none; } }
     .homepage__specific .specific-container::after {
       position: absolute;
       top: 50%;
@@ -736,6 +748,9 @@ button {
       width: 40%;
       transform: translateY(-50%);
       background: linear-gradient(270deg, #1E1E23 0%, rgba(30, 30, 35, 0) 100%); }
+      @media (max-width: 768px) {
+        .homepage__specific .specific-container::after {
+          display: none; } }
 
 .homepage__domain-expertise {
   position: relative;
