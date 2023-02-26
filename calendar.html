@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/slick.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="blank-header"></div>
+    <div id="page-header">
+        <div class="container">
+            <div class="wrapper" style="max-width:1267px;">
+                <ul class="menu-container">
+                    <li class="menu-item">
+                        <a href="#">Accueil</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Le Cabinet</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./expertise.html">Expertise</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Résultats</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Prochaines<br>Ventes</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Actualités</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="page-header--mobile">
+        <div class="header-icon-action"></div>
+    </div>
+    <div id="page-menu--mobile">
+        <ul class="menu-container">
+            <li class="menu-item">
+                <a href="#">Accueil</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Le Cabinet</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Expertise</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Résultats</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Prochaines Ventes</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Actualités</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div id="page-body">
+        <div class="body-pattern-background" style="background-image: url('./images/Ansas_pattern_background.png')"></div>
+        <div id="page-calendar">
+            <section class="sec-top-page">
+                <img class="logo" src="./images/Ansas_sec_top_logo.png" alt="">
+                <div class="page-name-box">
+                    <div class="content-side">
+                        <h1 class="name appear-custom-animation">Calendrier</h1>
+                        <h3 class="small-subscribe">Nos prochaines ventes</h3>
+                    </div>
+                </div>
+            </section>
+            <section class="calendar-event">
+                <div class="calendar__wrapper">
+                    <div class="calendar__inside">
+                        <div class="top-side">
+                            <div class="month-side">
+                                <button type="" class="calendar-control month-control left">
+                                    <i class="fa-solid fa-caret-left"></i>
+                                </button>
+                                <h1 id="month-event-showing" class="month">OCTOBRE</h1>
+                                <button type="" class="calendar-control  month-control right">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </button>
+                            </div>
+                            <div class="year-side">
+                                <div class="year-selection">
+                                    <div class="calendar-control">
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                    <h3 id="year-event-showing" class="year">2023</h3>
+                                </div>
+                                <ul class="year-option" id="all-year-options"></ul>
+                            </div>
+                        </div>
+                        <div class="calendar-side">
+                            <button class="calendar-control all-month-control month-control left">
+                                <i class="fa-solid fa-caret-left"></i>
+                            </button>
+                            <button class="calendar-control all-month-control month-control right">
+                                <i class="fa-solid fa-caret-right"></i>
+                            </button>
+                            <div class="main-calendar">
+                                <div class="line-division"></div>
+                                <div class="line-division"></div>
+                                <div class="line-division"></div>
+                                <div class="line-division"></div>
+                                <div class="line-division"></div>
+                                <div class="line-division"></div>
+                                <ul class="date-name">
+                                    <li>
+                                        <span>lundi</span>
+                                        <span>Lun</span>
+                                    </li>
+                                    <li>
+                                        <span>mardi</span>
+                                        <span>Mar</span>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            mercredi
+                                        </span>
+                                        <span>
+                                            Mer
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            jeudi
+                                        </span>
+                                        <span>
+                                            Jeu
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            vendredi
+                                        </span>
+                                        <span>
+                                            Ven
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            samedi
+                                        </span>
+                                        <span>
+                                            Ven
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            dimanche
+                                        </span>
+                                        <span>
+                                            Dim
+                                        </span>
+                                    </li>
+                                </ul>
+                                <ul class="date-number">
+                                    <!-- <li class="date-number-item">
+                                        <span></span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span></span>
+                                    </li>
+                                    <li class="date-number-item has-event">
+                                        <span>01</span>
+                                        <div class="event-notification">
+                                            <h3 class="name">Bayeux Enchères</h3>
+                                            <p class="job-position">Journée d'expertise</p>
+                                        </div>
+                                        <ul class="list-event">
+                                            <li class="event-item">
+                                                <img src="./images/Ansas_calendar_event_example.png" alt="" class="image-event">
+                                                <div class="bottom">
+                                                    <div class="info-side">
+                                                        <div class="left">
+                                                            <h3 class="name">Bayeux Enchères</h3>
+                                                            <p class="job-position">Journée d'expertise</p>
+                                                        </div>
+                                                        <div class="right">
+                                                            <p class="date">Oct. 1</p>
+                                                            <p class="hour">19:00</p>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="link-event">
+                                                        voir le site <i class="fa-solid fa-caret-right"></i>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>02</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>03</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>04</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>05</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>06</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>07</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>08</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>09</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>10</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>11</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>12</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>13</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>14</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>15</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>16</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>17</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>18</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>19</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>20</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>21</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>22</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>23</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>24</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>25</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>26</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>27</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>28</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>29</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>30</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span>31</span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span></span>
+                                    </li>
+                                    <li class="date-number-item">
+                                        <span></span>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="general-button orange">Contactez<br>nous</a>
+            </section>
+        </div>
+    </div>
+    <div id="page-footer">
+        <div class="container">
+            <div class="footer-wrapper">
+                <div class="head-logo">
+                    <img src="./images/Ansas_footer_logo.png" alt="">
+                </div>
+                <nav class="english-menu">
+                    <ul class="menu-container">
+                        <li class="menu-item">
+                            <a href="#">Homepage</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Le Cabinet</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Expertise</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Résultats</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Prochaines<br>Ventes</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="social-side">
+                    <a href="#" class="social-item">
+                        <img src="./images/Ansas_footer_fb_icon.png" alt="">
+                    </a>
+                    <a href="#" class="social-item">
+                        <img src="./images/Ansas_footer_instagram_icon.png" alt="">
+                    </a>
+                    <a href="#" class="social-item">
+                        <img src="./images/Ansas_footer_twitter_icon.png" alt="">
+                    </a>
+                </div>
+                <p class="copyright">© 2022 Ansas Papillon & de Léry</p>
+                <a href="#" class="other-link">Nos mentions légales</a>
+                <p class="developed">Mise en ligne par <span class="text-decoration-underline">AJILL</span> & <span class="text-decoration-underline">Milsabor</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

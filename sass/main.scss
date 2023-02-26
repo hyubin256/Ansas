@@ -1550,6 +1550,324 @@
         }
     }
 }
+.calendar{
+    &-event{
+        margin-bottom: 100px;
+    }
+    &__wrapper{
+        // padding: 60px 15px;
+        // border-top: 10px solid $orange-terra;
+        width: 1170px;
+        margin: 0 auto;
+        background-color: $white;
+        margin-bottom: 80px;
+        @media (max-width: 1200px) {
+            width:950px
+        }
+        @media (max-width: 992px) {
+            width: 100%;
+            padding: 0 20px;
+        }
+    }
+    &__inside{
+        padding: 60px 15px;
+        border-top: 10px solid $orange-terra;
+        border-bottom: 10px solid $orange-terra;
+        @media (max-width: 768px) {
+            padding: 60px 0;
+        }
+        .calendar-control{
+            background-color: transparent;
+            color: $brown-antique;
+            font-size: 25px;
+        }
+        .top-side{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            .month-side{
+                display: flex;
+                align-items: center;
+                .month{
+                    font-size: 80px;
+                    font-weight: 700;
+                    margin: 0 15px;
+                    @media (max-width: 768px) {
+                        font-size: 40px;
+                    }
+                }
+            }
+            .year-side{
+                position: relative;
+                .year-selection{
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    .year{
+                        font-size: 50px;
+                        margin-left: 15px;
+                        @media (max-width: 768px) {
+                            font-size: 30px;
+                        }
+                    }
+                }
+                .year-option{
+                    position: absolute;
+                    width: 150px;
+                    height: 250px;
+                    right: 0;
+
+                    top: calc(100% + 15px);
+                    background-color: $white;
+
+                    z-index: 10;
+                    overflow-y: scroll;
+                    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                    max-height: 0;
+
+                    transition: max-height 0.25s linear;
+                    &.show-option{
+                        max-height: 250px;
+                    }
+                    li.year-option-item{
+                        padding: 5px 0;
+                        text-align: center;
+                        font-size: 22px;
+                        cursor: pointer;
+
+                        transition: all 0.4s linear;
+                        &:not(:last-child){
+                            border-bottom: 1px solid rgba(200, 200, 200, 0.3);
+                        }
+                        &:hover{
+                            background-color: $orange-terra;
+                        }
+                    }
+                }
+            }
+        }
+        .calendar-side{
+            padding: 0 40px;
+            position: relative;
+            @media (max-width: 768px) {
+                padding: 0px;
+            }
+            .all-month-control{
+                position: absolute;
+                content: "";
+                left: 10px;
+                top: 350px;
+
+                transform: translateY( 50%);
+                @media (max-width: 768px) {
+                    display: none;
+                }
+                &.right{
+                    left: unset;
+                    right: 10px;
+                }
+            }
+            .main-calendar{
+                position: relative;
+                .line-division{
+                    position: absolute;
+                    top: 0;
+                    width: 1px;
+                    height: 100%;
+
+                    content: "";
+                    z-index:9;
+                    background-color: $orange-terra;
+                    &:first-child{
+                        left: calc(100% / 7 )
+                    }
+                    &:nth-child(2){
+                        left: calc(100% * 2 / 7 )
+                    }
+                    &:nth-child(3){
+                        left: calc(100% * 3 / 7 )
+                    }
+                    &:nth-child(4){
+                        left: calc(100% * 4 / 7 )
+                    }
+                    &:nth-child(5){
+                        left: calc(100% * 5 / 7 )
+                    }
+                    &:nth-child(6){
+                        left: calc(100% * 6 / 7 )
+                    }
+                }
+                ul.date-name, ul.date-number{
+                    display: flex;
+                    flex-wrap: wrap;
+                    border-left: 1px solid $orange-terra;
+                    border-right: 1px solid $orange-terra;
+                    li{
+                        width: calc(100% / 7);
+                        // border-right: 1px solid $orange-terra;
+                        text-align: center;
+                    }
+                }
+                ul.date-name{
+                    li{
+                        span{
+                            font-size: 15px;
+                            padding: 40px 5px 20px;
+                            &:first-child{
+                                display: block
+                            }
+                            &:last-child{
+                                display: none;
+                            }
+                            @media (max-width: 768px) {
+                                padding: 20px 0;
+                                &:first-child{
+                                    display: none;
+                                }
+                                &:last-child{
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+                ul.date-number{
+                    li.date-number-item{
+                        padding: 0 5px;
+                        position: relative;
+                        min-height:150px;
+                        @media (max-width: 768px) {
+                            padding: 0 0 30px;
+                            min-height: unset;
+                        }
+                        &.has-event{
+                            &::before{
+                                width: 8px;
+                                height: 8px;
+                                position: absolute;
+                                content: "";
+
+                                top: 60%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                z-index: 10;
+
+                                border-radius: 50%;
+                                background-color: $black;
+                                display: none;
+                                @media (max-width: 768px) {
+                                    display: block;
+                                }
+                            }
+                            span{
+                                opacity: 1;
+                                cursor: pointer;
+                            }
+                            &:hover{
+                                .list-event{
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                            }
+                        }
+                        &.show-left-side{
+                            .list-event{
+                                right: 100%;
+                                left: unset;
+                            }
+                        }
+                        span{
+                            font-size: 70px;
+                            line-height: 70px;
+                            font-weight: 700;
+                            opacity: 0.1;
+                            @media (max-width: 768px) {
+                                font-size: 35px;
+                                line-height: 35px;
+                            }
+                            @media (max-width: 595px) {
+                                font-size: 30px;
+                                line-height: 0px;
+                            }
+                        }
+                        .event-notification{
+                            padding-top: 15px;
+                            @media (max-width: 768px) {
+                                display: none;
+                            }
+                            &-item{
+                                width: 100%;
+                                padding: 0 4px 10px;
+                            .name{
+                                font-size: 13px;
+                                font-weight: 700;
+                            }
+                            .job-position{
+                                font-size: 13px;
+                            }
+                            }
+                        }
+                        .list-event{
+                            position: absolute;
+                            content: "";
+                            left: 100%;
+                            top: 50px;
+
+                            z-index: 11;
+                            width: 220px;
+                            opacity: 0;
+                            visibility: none;
+
+                            transition: all 0.4s linear;
+                            @media (max-width: 768px) {
+                                display: none;
+                            }
+                            .event-item{
+                                width: 100%;
+                                padding: 0;
+                                background-color:  $white;
+                                border: 0;
+
+                                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                                img.image-event{
+                                    width: 100%;
+                                    height: auto;
+                                }
+                                .bottom{
+                                    padding: 15px 25px;
+                                }
+                                .info-side{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    margin-bottom: 35px;
+                                    .name{
+                                        font-size: 11px;
+                                        font-weight: 700;
+                                    }
+                                    .job-position,.date,.hour{
+                                        font-size: 11px;
+                                    }
+                                    .date,.hour{
+                                        color: $blue-han;
+                                        font-weight: 700;
+                                        @include font-inter();
+                                    }
+                                }
+                                .link-event{
+                                    color: $input-dark-gray;
+                                    font-size: 10px;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 .estimation-upload-steps{
     text-align: center;
     margin-bottom: 40px;

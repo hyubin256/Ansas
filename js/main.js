@@ -4,6 +4,33 @@ AOS.init({
   once: true,
 });
 
+var event_dates = {
+  '2023-03-05': [
+    {
+      title: 'abc',
+      description: 'lorem is pum',
+      image: 'https://via.placeholder.com/300x200',
+      time: '19:00:00',
+      website_link: 'google.com'
+    },
+    {
+      title: 'abc',
+      description: 'lorem is pum',
+      image: 'https://via.placeholder.com/300x200',
+      time: '17:00:00',
+      website_link: 'google.com'
+    }
+  ],
+  '2023-02-26': [
+    {
+      title: 'abc',
+      description: 'lorem is pum',
+      image: 'https://via.placeholder.com/300x200',
+      time: '19:00:00',
+      website_link: 'google.com'
+    },
+  ]
+};
 var linkImage = {
     philippe: './images/Ansas_homepage_calendar_1.png',
     tanjan: './images/Ansas_homepage_calendar_2.png'}
@@ -94,8 +121,6 @@ var linkImage = {
 
     jQuery('.homepage__calendar .each-type').on('mouseenter',function(){
         const nameOfTypeCalendar = jQuery(this).attr('name');
-
-        // jQuery('#images-type-calendar').css('animation','fade-in-smooth 0.5s linear');
         jQuery('.images-type-calendar').each(function(index){
           if(jQuery(this).attr('name') == nameOfTypeCalendar){
             jQuery(this).addClass('active')
@@ -105,6 +130,7 @@ var linkImage = {
           }
         })
     })
+
     jQuery('.appear-custom-animation').each(function(index, value){
       const arrayContent = jQuery(this).html().trim().split('');
       jQuery(this).empty();
@@ -115,6 +141,7 @@ var linkImage = {
       });
       jQuery(this).prepend(newContentSplit);
     });
+
     var itemsContentIntroduce = jQuery('.content-introduce-items');
     var lengthContentIntroduce = itemsContentIntroduce.length;
     var currentContentIntroduce = 0;
@@ -131,4 +158,172 @@ var linkImage = {
             }
         });
     })
-  })
+    //Calendar
+    var showEventCalendar = false;
+    if(jQuery('#all-year-options')){
+      console.log(1)
+      let startYearOption = 2000;
+      let endYearOption = 2050;
+      let arrayYearOption = ``;
+      for(i = startYearOption; i <= endYearOption; i++){
+        arrayYearOption+=`<li class="year-option-item" valueyear="${i}">${i}</li>`
+      }
+      jQuery('#all-year-options').append(arrayYearOption);
+    }
+    jQuery('.calendar-event .year-option-item').on('click',function(){
+      const valueOfYear = jQuery(this).attr('valueyear')*1;
+      currentMonth = { value: currentMonth.value };
+      currentYear = { value: valueOfYear };
+      generateCalendar(currentMonth.value, currentYear.value);
+      jQuery('#all-year-options').removeClass('show-option')
+    })
+    jQuery('.calendar-event .year-selection').on('click',function(){
+      if(!jQuery('#all-year-options').hasClass('show-option')){
+        jQuery('#all-year-options').addClass('show-option')
+      }
+      else jQuery('#all-year-options').removeClass('show-option')
+    })
+})
+
+//Build calendar page
+const isLeapYear = (year) => {
+  return (
+    (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) ||
+    (year % 100 === 0 && year % 400 === 0)
+  );
+};
+const getFebDays = (year) => {
+  return isLeapYear(year) ? 29 : 28;
+};
+let calendar = document.querySelector('.calendar');
+const month_names = [
+  'Janvier',
+  'Février',
+  'Mars',
+  'Avril',
+  'Mai',
+  'Juni',
+  'Juillet',
+  'Août',
+  'Septembre',
+  'Octobre',
+  'Novembre',
+  'Décembre',
+];
+let month_picker = jQuery('#month-event-showing');
+
+const generateCalendar = (month, year) => {
+  let calendar_days = jQuery('.calendar-event .date-number');
+  calendar_days.html('');
+  let calendar_header_year = jQuery('#year-event-showing');
+  let days_of_month = [
+    31,
+    getFebDays(year),
+    31,
+    30,
+    31,
+    30,
+    31,
+    31,
+    30,
+    31,
+    30,
+    31,
+  ];
+  month_picker.html(month_names[month]);
+  calendar_header_year.html(year);
+  let first_day = new Date(year, month);
+  let order_first_day = first_day.getDay();
+  order_first_day = order_first_day == 0 ? 7 : order_first_day;
+  let days = "";
+  for (let i = 1; i <= days_of_month[month] + order_first_day - 1; i++) {
+      if (i >= order_first_day && i< (days_of_month[month]+ order_first_day)) {
+        if(month<10) stringDay = i<10 ? `${year}-0${month+1}-0${i - order_first_day + 1}` : `${year}-0${month+1}-${i - order_first_day + 1}`;
+        if(month>=10) stringDay = i<10 ? `${year}-${month+1}-0${i - order_first_day + 1}` : `${year}-${month+1}-${i - order_first_day + 1}`;
+
+        let contentEventDay = event_dates[stringDay];
+        console.log(stringDay)
+        if(contentEventDay){
+          let eventNotification = '<ul class="event-notification">';
+          let eventList = '<ul class="list-event">';
+          contentEventDay.forEach((e,index)=>{
+            eventNotification += `
+              <li class="event-notification-item">
+                <h3 class="name">${e.title}</h3>
+                <p class="job-position">${e.description}</p>
+              </li>
+            `;
+            eventList += `
+            <li class="event-item">
+              <img src="${e.image}" alt="" class="image-event">
+              <div class="bottom">
+                  <div class="info-side">
+                      <div class="left">
+                          <h3 class="name">${e.title}</h3>
+                          <p class="job-position">${e.description}</p>
+                      </div>
+                      <div class="right">
+                          <p class="date">${month_names[month]}. ${i+1}</p>
+                          <p class="hour">${e.time}</p>
+                      </div>
+                  </div>
+                  <a href="${e.website_link}" class="link-event">
+                      voir le site <i class="fa-solid fa-caret-right"></i>
+                  </a>
+              </div>
+            </li>
+            `
+          });
+          eventNotification += `</ul>`;
+          eventList += `</ul>`;
+          days += `
+            <li class='date-number-item has-event ${i%7==0 ? 'show-left-side' : ''}' date-event='${stringDay}'>
+            <span>${i - order_first_day + 1}</span>`
+            + eventNotification
+            + eventList
+            +`</li>`
+        }
+        else{
+          days += `
+             <li class='date-number-item'>
+               <span>${i - order_first_day + 1}</span>
+             </li>
+            `
+        };
+      }
+      else{
+        days += `
+          <li class='date-number-item'>
+            <span></span>
+          </li>
+          `
+      }
+    }
+  calendar_days.empty();
+  calendar_days.append(days)
+};
+
+var currentDate = `2023-03-05`;
+var currentMonth = { value: currentDate.split("-")[1]*1-1 };
+var currentYear = { value: currentDate.split("-")[0]*1 };
+generateCalendar(currentMonth.value, currentYear.value);
+
+jQuery('.month-control.right').on('click',function(){
+    let valueMonth =  currentMonth.value + 1;
+    let valueYear = currentYear.value;
+    valueMonth = (currentMonth.value + 1) > 11 ? 0 : valueMonth;
+    valueYear = (currentMonth.value  + 1) > 11 ? valueYear + 1 : valueYear;
+    currentMonth = { value: valueMonth };
+    currentYear = { value: valueYear };
+    generateCalendar(currentMonth.value, currentYear.value);
+})
+jQuery('.month-control.left').on('click',function(){
+    let valueMonth =  currentMonth.value - 1;
+    let valueYear = currentYear.value;
+    valueMonth = (currentMonth.value - 1) < 0 ? 11 : valueMonth;
+    valueYear = (currentMonth.value - 1) < 0 ? valueYear - 1 : valueYear;
+    currentMonth = { value: valueMonth};
+    currentYear = { value: valueYear };
+    generateCalendar(currentMonth.value, currentYear.value);
+})
+
