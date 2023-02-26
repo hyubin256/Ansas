@@ -49,7 +49,11 @@ var linkImage = {
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      obj.innerHTML = Math.floor(progress * (end - start) + start);
+      try{
+        obj.innerHTML = Math.floor(progress * (end - start) + start);
+      }catch{
+
+      }
       if (progress < 1) {
         window.requestAnimationFrame(step);
       }
@@ -196,7 +200,7 @@ const getFebDays = (year) => {
   return isLeapYear(year) ? 29 : 28;
 };
 let calendar = document.querySelector('.calendar');
-const month_names = [
+var month_names = [
   'Janvier',
   'Février',
   'Mars',
@@ -238,11 +242,10 @@ const generateCalendar = (month, year) => {
   let days = "";
   for (let i = 1; i <= days_of_month[month] + order_first_day - 1; i++) {
       if (i >= order_first_day && i< (days_of_month[month]+ order_first_day)) {
-        if(month<10) stringDay = i<10 ? `${year}-0${month+1}-0${i - order_first_day + 1}` : `${year}-0${month+1}-${i - order_first_day + 1}`;
-        if(month>=10) stringDay = i<10 ? `${year}-${month+1}-0${i - order_first_day + 1}` : `${year}-${month+1}-${i - order_first_day + 1}`;
+        if(month<10) stringDay = (i - order_first_day + 1) <10 ? `${year}-0${month+1}-0${i - order_first_day + 1}` : `${year}-0${month+1}-${i - order_first_day + 1}`;
+        else if(month>=10) stringDay = (i - order_first_day + 1) ? `${year}-${month+1}-0${i - order_first_day + 1}` : `${year}-${month+1}-${i - order_first_day + 1}`;
 
         let contentEventDay = event_dates[stringDay];
-        console.log(stringDay)
         if(contentEventDay){
           let eventNotification = '<ul class="event-notification">';
           let eventList = '<ul class="list-event">';
@@ -300,7 +303,7 @@ const generateCalendar = (month, year) => {
       }
     }
   calendar_days.empty();
-  calendar_days.append(days)
+  calendar_days.html(days)
 };
 
 var currentDate = `2023-03-05`;
@@ -327,3 +330,21 @@ jQuery('.month-control.left').on('click',function(){
     generateCalendar(currentMonth.value, currentYear.value);
 })
 
+jQuery(document).on('click','.date-number-item',function(){
+  if(jQuery(this).attr('date-event') && window.screen.width<=768){
+    // let dateString = jQuery(this).attr('date-event');
+    let dateArray = jQuery(this).attr('date-event').split('-');
+    console.log(dateArray)
+    let contentEvent = jQuery(this).children('.list-event').html();
+    console.log(contentEvent)
+    jQuery('.event-side-mobile .wrapper').html(contentEvent);
+    jQuery('.event-side-mobile').addClass('show-event-mobile');
+    jQuery('.event-side-mobile .date-shown').html(`
+      ${month_names[dateArray[1]-1]} ${dateArray[2]}
+    `)
+  }
+  else{
+    jQuery('.event-side-mobile').removeClass('show-event-mobile');
+    jQuery('.event-side-mobile .wrapper').html('contentEvent');
+  }
+})

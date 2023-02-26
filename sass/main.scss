@@ -1703,14 +1703,14 @@
                     flex-wrap: wrap;
                     border-left: 1px solid $orange-terra;
                     border-right: 1px solid $orange-terra;
-                    li{
+                    li.date-number-item,li.date-name-item{
                         width: calc(100% / 7);
                         // border-right: 1px solid $orange-terra;
                         text-align: center;
                     }
                 }
                 ul.date-name{
-                    li{
+                    li.date-name-item{
                         span{
                             font-size: 15px;
                             padding: 40px 5px 20px;
@@ -1766,6 +1766,7 @@
                             }
                             &:hover{
                                 .list-event{
+                                    transform: translateZ(10);
                                     opacity: 1;
                                     visibility: visible;
                                 }
@@ -1799,71 +1800,126 @@
                             &-item{
                                 width: 100%;
                                 padding: 0 4px 10px;
-                            .name{
-                                font-size: 13px;
-                                font-weight: 700;
-                            }
-                            .job-position{
-                                font-size: 13px;
-                            }
-                            }
-                        }
-                        .list-event{
-                            position: absolute;
-                            content: "";
-                            left: 100%;
-                            top: 50px;
-
-                            z-index: 11;
-                            width: 220px;
-                            opacity: 0;
-                            visibility: none;
-
-                            transition: all 0.4s linear;
-                            @media (max-width: 768px) {
-                                display: none;
-                            }
-                            .event-item{
-                                width: 100%;
-                                padding: 0;
-                                background-color:  $white;
-                                border: 0;
-
-                                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-                                img.image-event{
-                                    width: 100%;
-                                    height: auto;
-                                }
-                                .bottom{
-                                    padding: 15px 25px;
-                                }
-                                .info-side{
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: space-between;
-                                    margin-bottom: 35px;
-                                    .name{
-                                        font-size: 11px;
-                                        font-weight: 700;
-                                    }
-                                    .job-position,.date,.hour{
-                                        font-size: 11px;
-                                    }
-                                    .date,.hour{
-                                        color: $blue-han;
-                                        font-weight: 700;
-                                        @include font-inter();
-                                    }
-                                }
-                                .link-event{
-                                    color: $input-dark-gray;
-                                    font-size: 10px;
+                                .name{
+                                    font-size: 13px;
                                     font-weight: 700;
+                                }
+                                .job-position{
+                                    font-size: 13px;
                                 }
                             }
                         }
                     }
                 }
+            }
+        }
+        .list-event,.event-side-mobile{
+            position: absolute;
+            content: "";
+            left: 100%;
+            top: 50px;
+
+            z-index: 11;
+            width: 220px;
+            opacity: 0;
+            visibility: hidden;
+
+            transition: all 0.4s linear;
+            transform: translateZ(-1);
+            @media (max-width: 768px) {
+                display: none;
+            }
+            .event-item{
+                width: 100%;
+                padding: 0;
+                background-color:  $white;
+                border: 0;
+
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                img.image-event{
+                    width: 100%;
+                    height: auto;
+                }
+                .bottom{
+                    padding: 15px 25px;
+                }
+                .info-side{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 35px;
+                    .name{
+                        font-size: 11px;
+                        font-weight: 700;
+                        @media screen {
+                            font-size: 15px;
+                        }
+                    }
+                    .job-position,.date,.hour{
+                        font-size: 11px;
+                        @media screen {
+                            font-size: 15px;
+                        }
+                    }
+                    .date,.hour{
+                        color: $blue-han;
+                        font-weight: 700;
+                        @include font-inter();
+                    }
+                }
+                .link-event{
+                    color: $input-dark-gray;
+                    font-size: 10px;
+                    font-weight: 700;
+                    width: fit-content;
+
+                    margin: 0 auto;
+                    @media screen {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .event-side-mobile{
+            position: relative;
+            left: unset;
+            top: unset;
+            display: none;
+
+            width: 100%;
+            margin-top: 60px;
+            &::before{
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 20px;
+
+                width: 100%;
+                height: 1px;
+                background-color: $black;
+            }
+            .date-shown{
+                font-size: 28px;
+                width: fit-content;
+                margin: 0 auto 40px;
+                padding: 0 10px;
+
+                @include p-relative-10();
+                background-color: $white;
+            }
+            .wrapper{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 60px;
+                row-gap: 40px;
+                @media screen {
+                    grid-template-columns: 1fr;
+                }
+            }
+            &.show-event-mobile{
+                display: block;
+                opacity: 1;
+                visibility: visible;
             }
         }
     }
