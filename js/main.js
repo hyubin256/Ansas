@@ -148,10 +148,12 @@ var linkImage = {
 
     var itemsContentIntroduce = jQuery('.content-introduce-items');
     var lengthContentIntroduce = itemsContentIntroduce.length;
+    console.log('do dai introduce item',lengthContentIntroduce)
     var currentContentIntroduce = 0;
     jQuery('.homepage__head-introduce .next-button').on('click', function(){
         currentContentIntroduce+=1;
-        if(currentContentIntroduce>=(lengthContentIntroduce-1))currentContentIntroduce = 0;
+        if(currentContentIntroduce>=(lengthContentIntroduce)) currentContentIntroduce = 0;
+        console.log(currentContentIntroduce);
         itemsContentIntroduce.each(function(index){
             jQuery(this).removeClass('preload')
             if(index != currentContentIntroduce){
@@ -165,7 +167,6 @@ var linkImage = {
     //Calendar
     var showEventCalendar = false;
     if(jQuery('#all-year-options')){
-      console.log(1)
       let startYearOption = 2000;
       let endYearOption = 2050;
       let arrayYearOption = ``;
