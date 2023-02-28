@@ -152,24 +152,20 @@ var linkImage = {
     var currentContentIntroduce = 0;
     jQuery('.homepage__head-introduce .next-button').on('click', function(){
         currentContentIntroduce+=1;
-        if(currentContentIntroduce>=(lengthContentIntroduce)) currentContentIntroduce = 0;
-        console.log(currentContentIntroduce);
+        if( currentContentIntroduce >= (lengthContentIntroduce) ) currentContentIntroduce = 0;
         itemsContentIntroduce.each(function(index){
             if(index != currentContentIntroduce){
                 jQuery(this).removeClass('active');
                 if (jQuery(this).hasClass('first')) {
                   jQuery(this).removeClass('active first preload');
-                  console.log('co')
                 }
                 else {
                   jQuery(this).removeClass('active');
-                  console.log('co1')
                 }
             }
             if(index == currentContentIntroduce){
                 jQuery(this).addClass('active').removeClass('preload');
             }
-            // jQuery(this).removeClass('preload')
         });
     })
     //Calendar
