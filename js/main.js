@@ -117,8 +117,8 @@ var linkImage = {
     })
 
     if(widthScreen >=768){
-      let contentStepTwo = jQuery('.estimation-upload-steps.step-two.desktop').html();
-      jQuery('.estimation-upload-steps.step-two.mobile').append(contentStepTwo);
+      let contentStepTwo = jQuery('.estimation-upload-steps.step-two').detach();
+      jQuery('.expertise__estimation .subscribe-side').append(contentStepTwo);
     }
     if(widthScreen<768){
     }
