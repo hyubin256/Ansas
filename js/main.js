@@ -155,13 +155,21 @@ var linkImage = {
         if(currentContentIntroduce>=(lengthContentIntroduce)) currentContentIntroduce = 0;
         console.log(currentContentIntroduce);
         itemsContentIntroduce.each(function(index){
-            jQuery(this).removeClass('preload')
             if(index != currentContentIntroduce){
-                jQuery(this).removeClass('active first');
+                jQuery(this).removeClass('active');
+                if (jQuery(this).hasClass('first')) {
+                  jQuery(this).removeClass('active first preload');
+                  console.log('co')
+                }
+                else {
+                  jQuery(this).removeClass('active');
+                  console.log('co1')
+                }
             }
             if(index == currentContentIntroduce){
-                jQuery(this).addClass('active');
+                jQuery(this).addClass('active').removeClass('preload');
             }
+            // jQuery(this).removeClass('preload')
         });
     })
     //Calendar
