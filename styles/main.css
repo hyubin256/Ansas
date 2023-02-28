@@ -410,7 +410,8 @@ button {
           margin-bottom: 100px; }
           @media (max-width: 768px) {
             .homepage__head-introduce .wrapper .right .group-slider .top-image {
-              margin-bottom: 60px; } }
+              margin-bottom: 60px;
+              text-align: center; } }
           .homepage__head-introduce .wrapper .right .group-slider .top-image img {
             width: 332px; }
       .homepage__head-introduce .wrapper .right .content-introduce-slider {
